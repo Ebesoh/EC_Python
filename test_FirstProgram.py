@@ -17,12 +17,12 @@ def test_mod():
     assert calculator(8, 7, "%") == 1
 
 def test_division_by_zero():
-    with pytest.raises(ValueError, match="Cannot divide by zero"):
+    with pytest.raises(ValueError, match = "Cannot divide by zero"):
         calculator(10, 0, "/")
 
 def test_invalid_operator():
-    with pytest.raises(ValueError, match="Unknow operator"):
+    with pytest.raises(ValueError, match = "Unknow operator"):
         calculator(5, 6, "&")
 def test_invalid_no_operator():
-    with pytest.raises(ValueError, match="Unknow operator"):
+    with pytest.raises(ValueError, match = "Unknow operator"):
         calculator(5, 6, "")
