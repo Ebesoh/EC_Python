@@ -13,6 +13,9 @@ def test_multiplication():
 def test_division():
     assert calculator(8, 2, "/") == 4
 
+def test_mod():
+    assert calculator(8, 7, "%") == 1
+
 def test_division_by_zero():
     with pytest.raises(ValueError, match="Cannot divide by zero"):
         calculator(10, 0, "/")
