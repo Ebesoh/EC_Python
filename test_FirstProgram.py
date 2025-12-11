@@ -23,3 +23,6 @@ def test_division_by_zero():
 def test_invalid_operator():
     with pytest.raises(ValueError, match="Unknow operator"):
         calculator(5, 6, "&")
+def test_invalid_no_operator():
+    with pytest.raises(ValueError, match="Unknow operator"):
+        calculator(5, 6, "")
