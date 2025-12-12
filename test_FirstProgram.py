@@ -31,8 +31,32 @@ def test_invalid_no_operator():
     with pytest.raises(ValueError, match = "Unknow operator"):
         calculator(5, 6, "")
 
-def test_addMock():
+def test_add_Mock():
     with patch("CalculatorProgram.calculator", return_value = 4) as mock_calc:
         result =  CalculatorProgram.calculator(2,2,"+")
         assert result == 4
         mock_calc.assert_called_once_with(2,2,"+")
+
+def test_sub_Mock():
+    with patch("CalculatorProgram.calculator", return_value = 2) as mock_calc:
+        result =  CalculatorProgram.calculator(4,2,"-")
+        assert result == 2
+        mock_calc.assert_called_once_with(4,2,"-")
+
+def test_multi_Mock():
+    with patch("CalculatorProgram.calculator", return_value = 4) as mock_calc:
+        result =  CalculatorProgram.calculator(2,2,"*")
+        assert result == 4
+        mock_calc.assert_called_once_with(2,2,"*")
+
+def test_divide_Mock():
+    with patch("CalculatorProgram.calculator", return_value = 2) as mock_calc:
+        result =  CalculatorProgram.calculator(4,2,"/")
+        assert result == 2
+        mock_calc.assert_called_once_with(4,2,"/")
+
+def test_mod_Mock():
+    with patch("CalculatorProgram.calculator", return_value = 1) as mock_calc:
+        result =  CalculatorProgram.calculator(3,2,"%")
+        assert result == 1
+        mock_calc.assert_called_once_with(3,2,"%")
