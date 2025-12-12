@@ -1,5 +1,8 @@
 import pytest
+
+import CalculatorProgram
 from CalculatorProgram import calculator   # replace 'your_module' with the name of the file containing the function
+from unittest.mock import patch
 
 def test_addition():
     assert calculator(5, 3, "+") == 8
@@ -23,6 +26,13 @@ def test_division_by_zero():
 def test_invalid_operator():
     with pytest.raises(ValueError, match = "Unknow operator"):
         calculator(5, 6, "&")
+
 def test_invalid_no_operator():
     with pytest.raises(ValueError, match = "Unknow operator"):
         calculator(5, 6, "")
+
+def test_addMock():
+    with patch("CalculatorProgram.calculator", return_value = 4) as mock_calc:
+        result =  CalculatorProgram.calculator(2,2,"+")
+        assert result == 4
+        mock_calc.assert_called_once_with(2,2,"+")
