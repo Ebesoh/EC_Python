@@ -8,4 +8,4 @@ def test_fetch_data():
     with patch("api_call.requests.get", return_value = fake_response):
         result = api_call.fetch_data()
 
-    assert result == {"status":"oki"}
+    assert result == {"status":"ok"}
