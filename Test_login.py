@@ -47,14 +47,9 @@ def test_successful_login_username1(driver):
     login(driver, "standard_user", "secret_sauce")
     assert "inventory" in driver.current_url
 
-#def test_successful_login_username2(driver):
-    """Verifierar att användaren kan logga in med giltiga uppgifter.
-    Detta är ett kritiskt användarflöde och lämpar sig väl för Selenium-testning."""
 
-   # login(driver, "locked_out_user", "secret_sauce")
-    #assert "inventory" in driver.current_url
 
-def test_successful_login_username3(driver):
+def test_successful_login_username2(driver):
     """
     Verifierar att användaren kan logga in med giltiga uppgifter.
     Detta är ett kritiskt användarflöde och lämpar sig väl för Selenium-testning.
@@ -62,7 +57,7 @@ def test_successful_login_username3(driver):
     login(driver, "problem_user", "secret_sauce")
     assert "inventory" in driver.current_url
 
-def test_successful_login_username4(driver):
+def test_successful_login_username3(driver):
     """
     Verifierar att användaren kan logga in med giltiga uppgifter.
     Detta är ett kritiskt användarflöde och lämpar sig väl för Selenium-testning.
@@ -70,7 +65,7 @@ def test_successful_login_username4(driver):
     login(driver, "performance_glitch_user", "secret_sauce")
     assert "inventory" in driver.current_url
 
-def test_successful_login_username5(driver):
+def test_successful_login_username4(driver):
     """
     Verifierar att användaren kan logga in med giltiga uppgifter.
     Detta är ett kritiskt användarflöde och lämpar sig väl för Selenium-testning.
@@ -78,7 +73,7 @@ def test_successful_login_username5(driver):
     login(driver, "error_user", "secret_sauce")
     assert "inventory" in driver.current_url
 
-def test_successful_login_username6(driver):
+def test_successful_login_username5(driver):
     """
     Verifierar att användaren kan logga in med giltiga uppgifter.
     Detta är ett kritiskt användarflöde och lämpar sig väl för Selenium-testning.
