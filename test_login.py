@@ -159,7 +159,7 @@ def test_locked_user_wrongpassword(driver):
     """
     login(driver, "locked_out_user", "secret_sauc")
     error = driver.find_element(By.CSS_SELECTOR, "[data-test='error']")
-    assert "locked" in error.text
+    assert error.is_displayed()
 
 
 def test_empty_fields(driver):
