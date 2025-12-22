@@ -13,7 +13,6 @@ https://education.systementor.se
 OBS! Inkludera länk till ditt GitHub-repo i din rapport (del 1)!
 OBS! OBS! Se till att GitHub-repot är Public och inte Private! Kommer jag inte repot får ni automatiskt underkänt."""
 
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -99,13 +98,14 @@ def test_successful_login_username5(driver):
 
 
 def test_wrong_password_username1(driver):
+
     """
     Säkerställer att systemet blockerar inloggning vid fel lösenord
     och ger användaren korrekt feedback.
     """
-    login(driver, "standard_user", "wrong_password")
-    error = driver.find_element(By.CSS_SELECTOR, "[data-test='error']")
-    assert error.is_displayed()
+    login(driver,"standard_user", "wrong_password")
+    error = driver.find_element(By.CSS_SELECTOR,"[data-test='error']")
+    assert error.text == "Epic sadface: Username and password do not match any user in this service"
 
 def test_wrong_password_username2(driver):
     """
@@ -114,7 +114,7 @@ def test_wrong_password_username2(driver):
     """
     login(driver, "problem_user", "wrong_password")
     error = driver.find_element(By.CSS_SELECTOR, "[data-test='error']")
-    assert error.is_displayed()
+    assert error.text == "Epic sadface: Username and password do not match any user in this service"
 
 def test_wrong_password_username3(driver):
     """
@@ -123,7 +123,7 @@ def test_wrong_password_username3(driver):
     """
     login(driver, "performance_glitch_user", "wrong_password")
     error = driver.find_element(By.CSS_SELECTOR, "[data-test='error']")
-    assert error.is_displayed()
+    assert error.text == "Epic sadface: Username and password do not match any user in this service"
 
 def test_wrong_password_username4(driver):
     """
@@ -132,7 +132,7 @@ def test_wrong_password_username4(driver):
     """
     login(driver, "error_user", "wrong_password")
     error = driver.find_element(By.CSS_SELECTOR, "[data-test='error']")
-    assert error.is_displayed()
+    assert error.text == "Epic sadface: Username and password do not match any user in this service"
 
 def test_wrong_password_username5(driver):
     """
@@ -141,7 +141,7 @@ def test_wrong_password_username5(driver):
     """
     login(driver, "visual_user", "wrong_password")
     error = driver.find_element(By.CSS_SELECTOR, "[data-test='error']")
-    assert error.is_displayed()
+    assert error.text == "Epic sadface: Username and password do not match any user in this service"
 
 def test_locked_user_givenpassword(driver):
     """
@@ -150,7 +150,7 @@ def test_locked_user_givenpassword(driver):
     """
     login(driver, "locked_out_user", "secret_sauce")
     error = driver.find_element(By.CSS_SELECTOR, "[data-test='error']")
-    assert "locked" in error.text
+    assert error.text == "Epic sadface: Sorry, this user has been locked out."
 
 def test_locked_user_wrongpassword(driver):
     """
@@ -159,7 +159,7 @@ def test_locked_user_wrongpassword(driver):
     """
     login(driver, "locked_out_user", "secret_sauc")
     error = driver.find_element(By.CSS_SELECTOR, "[data-test='error']")
-    assert error.is_displayed()
+    assert error.text == "Epic sadface: Username and password do not match any user in this service"
 
 
 def test_empty_fields(driver):
@@ -168,7 +168,7 @@ def test_empty_fields(driver):
     """
     driver.find_element(By.ID, "login-button").click()
     error = driver.find_element(By.CSS_SELECTOR, "[data-test='error']")
-    assert error.is_displayed()
+    assert error.text == "Epic sadface: Username is required"
 
 def test_username_without_password(driver):
     """
@@ -179,7 +179,7 @@ def test_username_without_password(driver):
     driver.find_element(By.ID, "login-button").click()
 
     error = driver.find_element(By.CSS_SELECTOR, "[data-test='error']")
-    assert error.is_displayed()
+    assert error.text == "Epic sadface: Password is required"
 
 def test_password_without_username(driver):
     """
@@ -190,4 +190,4 @@ def test_password_without_username(driver):
     driver.find_element(By.ID, "login-button").click()
 
     error = driver.find_element(By.CSS_SELECTOR, "[data-test='error']")
-    assert error.is_displayed()
+    assert error.text == "Epic sadface: Username is required"
