@@ -1,3 +1,19 @@
+"""Del 2 – Inloggningsfunktion
+På https://www.saucedemo.com/ finns en enkel inloggningsruta där användaren kan logga in.
+Din uppgift är att skapa automatiserade testfall för denna funktion med hjälp av Selenium WebDriver.
+Testerna ska vara tydligt strukturerade och täcka samtliga krav nedan.
+För G – Grundläggande test
+● Skapa ett testfall där inloggningen lyckas med korrekta användaruppgifter.
+● Kontrollera att användaren loggas in och hamnar på startsidan efter lyckad inloggning.
+För VG – Utökade tester(Samtliga G delar + utökade tester)
+Utöver det grundläggande testet ska du även:
+● Skapa ett testfall där fel användarnamn anges och verifiera att ett felmeddelande visas.
+● Skapa ett testfall där fel lösenord anges och verifiera att ett felmeddelande visas.
+https://education.systementor.se
+OBS! Inkludera länk till ditt GitHub-repo i din rapport (del 1)!
+OBS! OBS! Se till att GitHub-repot är Public och inte Private! Kommer jag inte repot får ni automatiskt underkänt."""
+
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
