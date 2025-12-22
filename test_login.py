@@ -143,12 +143,21 @@ def test_wrong_password_username5(driver):
     error = driver.find_element(By.CSS_SELECTOR, "[data-test='error']")
     assert error.is_displayed()
 
-def test_locked_user(driver):
+def test_locked_user_givenpassword(driver):
     """
     Kontrollerar att låsta användarkonton inte kan logga in,
     vilket är ett viktigt säkerhetskrav.
     """
     login(driver, "locked_out_user", "secret_sauce")
+    error = driver.find_element(By.CSS_SELECTOR, "[data-test='error']")
+    assert "locked" in error.text
+
+def test_locked_user_wrongpassword(driver):
+    """
+    Kontrollerar att låsta användarkonton inte kan logga in,
+    vilket är ett viktigt säkerhetskrav.
+    """
+    login(driver, "locked_out_user", "secret_sauc")
     error = driver.find_element(By.CSS_SELECTOR, "[data-test='error']")
     assert "locked" in error.text
 
