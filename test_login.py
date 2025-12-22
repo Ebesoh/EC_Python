@@ -70,7 +70,7 @@ def test_successful_login_username2(driver):
     Verifierar att användaren kan logga in med giltiga uppgifter.
     Detta är ett kritiskt användarflöde och lämpar sig väl för Selenium-testning.
     """
-    login(driver, "problem_user", "secret_sauce")
+    login(driver, "problem_use", "secret_sauce")
     assert "inventory" in driver.current_url
 
 def test_successful_login_username3(driver):
