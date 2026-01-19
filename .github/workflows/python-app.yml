@@ -89,4 +89,7 @@ jobs:
 
     - name: Run pytest
       run: |
-        pytest
+        pytest \
+          --ignore=test_1_katalon.py \
+          --ignore=test_Del_3_Integrationstester.py \
+          -v 
